@@ -1,0 +1,236 @@
+https://www.youtube.com/watch?v=bgq7FRSPDpI&list=PL55RiY5tL51rG1x02Yyj93iypUuHYXcB_&index=7
+
+#7 Dynamic Relations | Build a Complete App with GraphQL, Node.js, MongoDB and React.js
+========
+
+======
+Install all dependencies
+
+npm install
+npm install -- save mongoose
+npm install -- save bcryptjs
+============
+Run the server
+npm start
+
+
+
+=======
+new Date().toISOString(); 
+"2020-05-17T12:07:09.577Z"
+=========
+
+mutation m {
+  createUser(userInput: {email: "qqqq", password: "qwrt.poi.io"}) {
+    password
+  }
+}
+{
+  "data": {
+    "createUser": {
+      "password": null
+    }
+  }
+}
+======
+
+mutation m {
+  createEvent(eventInput: {title: "t", description: "fg", 
+    price: 9.9, date: "2020-05-17T12:07:09.577Z" }) {
+    creator {
+      _id
+      email
+      password
+    }
+  }
+}
+
+{
+  "data": {
+    "createEvent": {
+      "creator": {
+        "_id": "5ec2ecaf7c469b1a5ca90ea9",
+        "email": "qqqq",
+        "password": "$2a$12$OJo5XNQ/sB0n9JxdmbWc6O4JdmmZu9Jsu0P5qKSteVG6lGYWZ9Fsu"
+      }
+    }
+  }
+}
+=========
+
+mutation m {
+  createEndUser(endUserInput: {
+    usermobileno: "334 4132945"
+  userlabel :"Super Admin"
+    username : "Riaz"
+    userpw :"pw"
+   
+  
+  }) {
+    _id
+    userlabel
+    username
+    userpw
+    
+    
+  }
+}
+
+
+query q {
+  getallendusers{
+    _id
+    usermobileno
+    userlabel
+    username
+    userpw
+     
+  }
+  
+}
+
+
+
+{"_id":{
+"$oid":"5ee202faef73970500418b5f"},
+"usermobileno":"334 4132946",
+"userlabel":"Super Admin",
+"username":"Riaz",
+"userpw":"$2a$12$1ncp7WUyY9jawhdxD2EUX.p1Bqwj3qlvGPtL3P8eFdj2KJ2rK3L.q",
+"__v":{"$numberInt":"0"}}
+
+
+=======
+mutation {
+  createUser(
+    userInput: 
+    { 
+      usermobileno: "333 12365467", 
+      userlabel: "Super Admin", 
+      username: "Taha", 
+      userpw: "pw12", 
+      ismanager: "1", 
+      usermanagerid: "1", 
+      userststus: "Active", 
+      usercreatedon: "2020-06-11 04:20:20 PM", 
+      usercreatedby: "Riaz"
+    }) 
+  {
+    usermobileno
+    userlabel
+    username
+    userpw
+    ismanager
+    usermanagerid
+    userststus
+    usercreatedon
+    usercreatedby
+  }
+}
+
+
+
+{
+  "data": {
+    "createUser": {
+      "usermobileno": "333 12365467",
+      "userlabel": "Super Admin",
+      "username": "Taha",
+      "userpw": null,
+      "ismanager": "1",
+      "usermanagerid": "1",
+      "userststus": "Active",
+      "usercreatedon": "2020-06-11 04:20:20 PM",
+      "usercreatedby": "Riaz"
+    }
+  }
+}
+
+
+
+{
+  "data": {
+    "createUser": {
+      "usermobileno": "333 12365467",
+      "userlabel": "Super Admin",
+      "username": "Taha",
+      "userpw": null,
+      "ismanager": "1",
+      "usermanagerid": "1",
+      "userststus": "Active",
+      "usercreatedon": "2020-06-11 04:20:20 PM",
+      "usercreatedby": "Riaz"
+    }
+  }
+}
+
+{
+  "data": {
+    "getAllUsers": [
+      {
+        "_id": "5ee23102f7a0c111c4b492d8",
+        "usermobileno": "123 12365467",
+        "userlabel": "Super Admin",
+        "username": "Taha",
+        "userpw": "$2a$12$Xow1G.hJHUEClhOcQATWVO59lb6EaZMMIMNvH.zjbAIA7XvNJXHSe",
+        "ismanager": "1",
+        "usermanagerid": "1",
+        "userststus": "Active",
+        "usercreatedon": "2020-06-11 04:20:20 PM",
+        "usercreatedby": "Riaz"
+      },
+      {
+        "_id": "5ee2311cf7a0c111c4b492d9",
+        "usermobileno": "567 12365467",
+        "userlabel": "Super Admin",
+        "username": "Taha",
+        "userpw": "$2a$12$6pAy9ARGLri6thpd7oy/2OmExKM70Lcl9ddo.Y.4vJKnl8H5u/JuS",
+        "ismanager": "1",
+        "usermanagerid": "1",
+        "userststus": "Active",
+        "usercreatedon": "2020-06-11 04:20:20 PM",
+        "usercreatedby": "Riaz"
+      },
+      {
+        "_id": "5ee232b2f7a0c111c4b492da",
+        "usermobileno": "333 12365467",
+        "userlabel": "Super Admin",
+        "username": "Taha",
+        "userpw": "$2a$12$QAGHiokyf.Bi.HxqKNdYyuYhbTTTN.51BLx.iiZKHRmiY5diRG0sW",
+        "ismanager": "1",
+        "usermanagerid": "1",
+        "userststus": "Active",
+  
+
+getUserByMobileNo(usermobileno: "333 12365467") {
+    _id
+    usermobileno
+    userlabel
+    username
+    userpw
+    ismanager
+    usermanagerid
+    userststus
+      usercreatedon
+    usercreatedby
+  }
+
+  "data": {
+    "getUserByMobileNo": {
+      "_id": "5ee232b2f7a0c111c4b492da",
+      "usermobileno": "333 12365467",
+      "userlabel": "Super Admin",
+      "username": "Taha",
+      "userpw": "$2a$12$QAGHiokyf.Bi.HxqKNdYyuYhbTTTN.51BLx.iiZKHRmiY5diRG0sW",
+      "ismanager": "1",
+      "usermanagerid": "1",
+      "userststus": "Active",
+      "usercreatedon": "2020-06-11 04:20:20 PM",
+      "usercreatedby": "Riaz"
+    }
+  }
+
+
+  https://dashboard.heroku.com/apps/ams604/deploy/heroku-git
+  heroku login
+  
